@@ -1,0 +1,76 @@
+h1 {
+    font-size: 6vmin;
+}
+
+h2{
+    font-size: 5vmin;
+}
+
+p	{
+    font-size: 3vmin;
+}
+
+hr {
+            text-decoration-color: rgb(200, 200, 200);
+    }
+
+    /* mise en page navigation */
+.navigation {
+    background-color: black;
+    height: fit-content;
+
+}
+
+.navigation a{
+    color: rgb(255, 255, 255);
+}
+/* --------------- */
+/* positionnement logo/slogan */
+#logo {
+    display: inline-block;
+}
+#slogan {
+    display: inline-block;
+    position: relative;
+    bottom: 25px;
+}
+@media screen and (max-width:425px)
+{
+    #slogan {
+        display: inline-block;
+        position: relative;
+        bottom: 25px;
+        margin-left: 30vw;
+    }
+}
+#promo img{
+    width: 100%;
+    height: auto;
+}
+
+/* --------------- */
+
+/* mise en page corps */
+#page {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: rgb(200, 200, 200); */
+}
+#colonne {
+    display: none;
+}
+#contenu {
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    width: 100%;
+}
+#contenu form{
+        width: fit-content;
+}
+#contenu table{
+    width: 100vw;
+}
+#contenu table img{
+    width: 10vw;}
+    
+/* --------------- */

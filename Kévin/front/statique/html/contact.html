@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> jarditou </title>
+        <link rel="stylesheet" media="screen and (min-width:768px)" href="../css/style.css">
+        <link rel="stylesheet" media="screen and (max-width:767px)" href="../css/tablet.css">
+        <link rel="stylesheet" media="screen and (max-width:375px)" href="../css/mobile375.css">
+
+       
+    </head>
+    <body>
+        <!----------------------------- entete du site, logo, navigation,promo-------------------------------------------------------------------------------------------- -->
+        <header >
+            <div  id="logo">
+                <img src="src/img/jarditou_logo.jpg" alt="logo" title="logo" width="400">
+            </div>
+            <div  id="slogan">
+                <h1>Tout le jardin</h1>
+            </div>
+                        <!-- class navigation pour formater le menu et le pied de page -->
+            <nav class="navigation">
+                <ul>
+                    <li> <a href="index.html">Accueil</a></li>
+                    <li> <a href="tableau.html">Tableau</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <aside id="promo"> <img src="src/img/promotion.jpg" alt="promotion" title="promotion">  </aside>
+        </header>
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <div  id="page">
+        <div  id="contenu">
+      <!-- contenu de la page ---------------------------------------------------------------------------------------------------------------------->
+            <h2>Contact</h2>
+        <hr>
+        <section>  
+            <article>
+                <h5> * Ces zones sont obligatoires</h5>
+                <form action="http://bienvu.net/script.php" method="post">
+                    <fieldset>
+                        <legend>vos coordonnées</legend>
+                        <label for="nom">Nom *</label> <input type="text" name="nom" id="nom" required>
+                        <br>
+                        <label for="prenom">Prénom *</label> <input type="text" name="prenom" id="prenom" required>
+                        <br>
+                        <label for="sexe"> Sexe *:</label><input type="radio" name="sexe" value="masculin" id="sexe" required>Masculin <input type="radio" name="sexe" value="feminin"  id="sexe" required>Féminin 
+                        <br>
+                        <label for="date"> Date de naissance *</label><input type="date" name="ddn" id="date" required>
+                        <br>
+                        <label for="cp">Code postal *</label><input type="text" name="cp" id="cp" required>
+                        <br>
+                        <label for="adresse"> Adresse</label><input type="text" name="adresse" id="adresse">
+                        <br>
+                        <label for="ville"> Ville</label> <input type="text" name="ville" id="ville">
+                        <label for="mail">Email *</label> <input type="email" name="mail" id="mail" placeholder="mail@domaine.com" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend> Votre demande</legend>
+                        <label for="sujet"> Sujet *</label> 
+                        <select id="sujet" required>
+                            <option value="" selected> Veuillez selectionner un sujet</option>
+                            <option value="commande"> Mes commandes</option>
+                            <option value="produit"> Question sur un produit</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autres</option>
+                        </select> 
+                        <br>
+                        <label for="question">Votre question *</label> <textarea name="question" rows="5" cols="30" id="question" required></textarea>
+                    </fieldset>
+                    <input type="checkbox" name="rgpd" value="accord" required> * J'accepte le traitement informatique de ce formulaire.
+                    <br>
+                    <button type="submit">envoyer</button> <button type="reset">annuler</button>
+    
+                </form>
+            </article>
+        </section>
+        </div>
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------->
+   
+         <div  id="colonne">
+            <!-- <p>[Colonne Droite]hhhhhhhhhhhhhhhh</p> -->
+        </div>
+    </div>
+
+<!-------------------------------------------------------------------    pied de page-----------------------------------------------------------------      -->
+        <footer class="navigation">         
+            <ul>       
+                <li><a href=# title="mentions légales">Mentions légales</a></li>
+                <li><a href="#" title="horaire">Horaires</a></li>
+                <li><a href="#" title="plan">Plan du site</a></li>
+             </ul>
+        </footer>
+<!--    ----------------------------------------------------------------------------------------------------------------------------------------------      -->
+    </body>
+</html>    

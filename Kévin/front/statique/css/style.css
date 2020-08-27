@@ -1,0 +1,60 @@
+
+hr {
+            text-decoration-color: rgb(200, 200, 200);
+    }
+
+    /* mise en page navigation */
+.navigation {
+    background-color: black;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+.navigation ul li {display: inline;
+
+}
+
+.navigation a{
+    color: rgb(255, 255, 255);
+}
+/* --------------- */
+/* positionnement logo/slogan */
+#logo {
+    display: inline-block;
+}
+#slogan {
+    display: inline-block;
+    position: relative;
+    left: 10vw;
+    bottom: 25px;
+}
+#promo img{
+    width: 100%;
+    height: auto;
+}
+
+/* --------------- */
+
+/* mise en page corps */
+#page {
+    display: flex;
+    justify-content: space-between;
+}
+#colonne {
+
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color:rgb(200, 200, 200);
+}
+#contenu {
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    width: 100%;
+}
+#contenu form{
+        width: fit-content;
+}
+/* --------------- */

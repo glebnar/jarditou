@@ -1,0 +1,65 @@
+h1 {
+    font-size: 4vh;
+}
+
+h2{
+    font-size: 3vh;
+}
+
+p	{
+    font-size: 1vh;
+}
+/* a {
+    font-size: 2vh;
+} */
+hr {
+            text-decoration-color: rgb(200, 200, 200);
+    }
+    /* mise en page navigation */
+.navigation {
+    background-color: black;
+    height: fit-content;
+    /* width: 100%; */
+
+}
+
+.navigation a{
+    color: rgb(255, 255, 255);
+}
+/* --------------- */
+/* positionnement logo/slogan */
+
+#logo img{
+    width: 100%;
+}
+#promo img{
+    width: 100%;
+    height: auto;
+}
+#slogan {
+    margin-left: 20vw;
+}
+/* --------------- */
+
+/* mise en page corps */
+#page {
+    display: flex;
+    justify-content: space-between;
+}
+#colonne {
+    display: none;
+}
+#contenu {
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    width: 100%;
+}
+#contenu form{
+        width: fit-content;
+}
+#contenu table{
+        width: 100%;
+}
+#contenu table img{
+width: 10vw;}
+/* --------------- */
