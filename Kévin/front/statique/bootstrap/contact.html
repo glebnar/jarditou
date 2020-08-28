@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>jarditou.com</title>
+</head>
+<body>
+<div class="container ">
+<!-- logo/slogan -->
+        <div class=" row">
+            <div class="col-3 d-none d-lg-block"> <img src="src/img/jarditou_logo.jpg" class="img-fluid" alt="logo jarditou" title="logo jarditou"> </div>
+            <div class="col-9 d-none d-lg-block"><h1 class="text-right">Tout le jardin</h1></div>      
+            <div class="col-1 d-none d-lg-block"></div>
+        </div>
+<!-- --- -->
+<!-- navigation -->
+        <nav class=" row navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Jarditou.com</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarnav" aria-controls="navbarnav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarnav">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="index.html">Accueil </a>
+                    <a class="nav-item nav-link" href="tableau.html">Tableau</a>
+                    <a class="nav*item nav-link active" href="contact.html">Contact<span class="sr-only ">(page actuel)</span></a>
+                </div>
+            </div>
+                    <form class="form-inline d-none d-lg-block">
+                        <input class="form-control" type="search" placeholder="votre promotion" aria-label="votre promotion">
+                        <button class="btn btn-outline-success" type="submit">recherche</button>
+                    </form>
+
+
+        </nav>
+<!-- --- -->
+<!-- promo -->
+<div class="row">
+    <div class="col-12 p-0 col-sm-12">
+        <img src="src/img/promotion.jpg" class="img-fluid " alt="promotion" title="promotion">
+    </div>
+</div> 
+<!-- --- -->
+<!-- contenu -->
+        <form action="http://bienvu.net/script.php" method="post">
+            <p class="row" > * Ces zones sont obligatoires</p>
+                    <fieldset>
+                        <legend class="h3">vos coordonnées</legend>
+                        <div class="form-goup row">
+                            <label for="nom">Nom *</label> 
+                            <input class="form-control" type="text" name="nom" id="nom" required>
+                        </div>
+                        <div class="form-goup row">
+                            <label for="prenom">Prénom *</label> 
+                            <input class="form-control" type="text" name="prenom" id="prenom" required>
+                        </div>
+                        <p class=" row mt-2">Sexe*</p>
+                        <div class="form-check form-check-inline row">
+                            <input class="form-check-input" type="radio" name="sexe" value="masculin" id="masc" required>
+                            <label class="form-check-label" for="masc"> Masculin</label>
+                        </div>
+                        <div class="form-check form-check-inline row">
+                            <input class="form-check-input" type="radio" name="sexe" value="feminin"  id="fem" required>
+                            <label class="form-check-label" for="fem">Féminin</label>
+                    </div>
+                        <div class="form-group  mt-2 row">
+                            <label for="date"> Date de naissance *</label>
+                            <input class="form-control" type="date" name="ddn" id="date" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cp">Code postal *</label>
+                                <input class="form-control" type="text" name="cp" id="cp" required>
+                        </div>
+                        <div class="form-group row">
+                            <label for="adresse"> Adresse</label>
+                            <input class="form-control" type="text" name="adresse" id="adresse">
+                        </div>
+                        <div class="form-group row">
+                            <label for="ville"> Ville</label> 
+                            <input class="form-control" type="text" name="ville" id="ville">
+                        </div>
+                        <div class="form-group row">
+                            <label for="mail">Email *</label> 
+                            <input class="form-control" type="email" name="mail" id="mail" placeholder="mail@domaine.com" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="h3"> Votre demande</legend>
+                        <div class="form-group row">
+                            <label for="sujet"> Sujet *</label> 
+                            <select class="form-control" id="sujet" required>
+                                <option value="" selected> Veuillez selectionner un sujet</option>
+                                <option value="commande"> Mes commandes</option>
+                                <option value="produit"> Question sur un produit</option>
+                                <option value="reclamation">Réclamation</option>
+                                <option value="autre">Autres</option>
+                            </select> 
+                        </div>
+                        <div class="form-group row">
+                            <label for="question">Votre question *</label> 
+                                <textarea class="form-control" name="question" rows="5" cols="30" id="question" required></textarea>
+                        </div>
+                    </fieldset>
+                    <div class="form-check row">
+                        <input class="form-check-input" type="checkbox" name="rgpd" value="accord" id="accord" required> 
+                        <label class="form-check-label" for="accord">* J'accepte le traitement informatique de ce formulaire.</label>
+                    </div>
+                        <button type="submit" class="btn btn-dark mr-2 row">envoyer</button>
+                        <button type="reset" class="btn btn-dark ">annuler</button>
+
+                </form>
+<!-- --- -->
+<!-- pied de page -->
+        <nav class="row navbar navbar-expand-lg navbar-dark bg-dark mt-3">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navpied" aria-controls="navpied" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarnav">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#">mentions légales</a>  
+                    <a class="nav-item nav-link" href="#">horaires</a>
+                    <a class="nav-item nav-link" href="#">plan du site</a>
+                </div>
+            </div>
+        </nav>
+<!-- --- -->
+</div>
+<!-- bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- --- -->
+</body>
+</html>
