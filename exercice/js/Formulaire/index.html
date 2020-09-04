@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulaire js</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="http://bienvu.net/script.php" method="POST">
+            <fieldset>
+                <legend class="h2">Vos coordonnées:</legend>
+                <p id="MsgAlert" class="text-danger">* Ces zones sont obligatoires pour envoyer le formulaire.</p>
+                <br>
+                <div class="form-group">
+                    <label for="societe">société *</label>
+                    <input class="form-control " type="text" name="societe" id="societe" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact"> Personne à contacter *</label>
+                    <input type="text" class="form-control" name="contact" id="contact" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse"></label>Adresse de l'entreprise</label>
+                    <TEXTarea rows="3" class="form-control" name="adresse" id="adresse"></TEXTarea>
+                </div>
+                <div class="form-group">
+                    <label for="CP">Code Postal *</label>
+                    <input type="number" class="form-control" name="CP" id="CP" required>
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville *</label>
+                    <input type="text" class="form-control" name="ville" id="ville" required>
+                </div>
+                <div class="form-group">
+                    <label for="mail">E-mail *</label>
+                    <input type="email" class="form-control" name="mail" id="mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Téléphone</label>
+                    <input type="text" class="form-control" name="tel" id="tel">
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label for="tec">Sélectionnez l'environnement technique du projet</label>
+                        <select name="tec" id="tec" class="form-control">
+                            <option value="Choisissez" selected>Choisissez</option>
+                            <option value="Acces">Acces</option>
+                            <option value="Java">Java</option>
+                            <option value="Delphi">Delphi</option>
+                            <option value="Windev">Windev</option>
+                            <option value="Visual Basic">Visual Basic</option>
+                            <option value="Power Builder">Power Builder</option>
+                            <option value="internet">Internet</option>
+                            <option value="intranet">Intranet</option>
+                            <option value="Windows NT"> Windows NT</option>
+                            <option value="Unix">Unix</option>
+                            <option value="SQL Server">SQL Server</option>
+                            <option value="Oracle">Oracle</option>
+                            <option value="Autres">Autres...</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <textarea name="tec" id="zoneTec" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark mr-2 " id="send">envoyer</button>
+                    <button type="reset" class="btn btn-dark " id="reset">annuler</button>
+                </div>
+            </fieldset>
+
+        </form>
+
+
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
