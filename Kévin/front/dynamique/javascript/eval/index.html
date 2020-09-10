@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>eval JAVASCRIPT</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 style="text-align: center;">Eval JAVASCRIPT</h1>
+            </div>
+        </div>
+
+        <button id="Id_btn1" type="button" class="btn btn-primary">eval1:les vieux, les jeunes et les moyens</button>
+        <hr>
+        <button id="Id_btn2" type="button" class="btn btn-primary">Table de multiplication</button>
+        <div id=multiplication></div>
+        <hr>
+        <button id="Id_btn3" type="button" class="btn btn-primary">Recherche de prénom</button>
+        <hr>
+        <h5>Total d'une commande</h5>
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="nom">Prix unitaire </label>
+                <input class="form-control " type="number" name="prix" id="prix">
+            </div>
+            <div class="form-group col-sm-3">
+                <label for="nom">Quantité </label>
+                <input class="form-control " type="number" name="qtt" id="qtt">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-3">
+                <label for="nom">total de la commande </label>
+                <textarea class="form-control" name="total" id="total" readonly></textarea>
+                <button id="Id_btn4" type="button" class="btn btn-primary">Calculer</button>
+            </div>
+        </div>
+        <hr>
+        <h5>Formulaire Jarditou</h5>
+        <div class="row">
+            <form action="http://bienvu.net/script.php" method="post" onSubmit="return CheckForm(this);">
+                <p> * Ces zones sont obligatoires</p>
+                <fieldset>
+                    <legend class="h3">vos coordonnées</legend>
+                    <div class="form-goup ">
+                        <label for="nom">Nom *</label>
+                        <input class="form-control" type="text" name="nom" id="nom">
+                        <div class="text-danger" id=ernom></div>
+                    </div>
+                    <div class="form-goup ">
+                        <label for="prenom">Prénom *</label>
+                        <input class="form-control" type="text" name="prenom" id="prenom">
+                        <div class="text-danger" id=erprenom></div>
+
+                    </div>
+                    <p class="  mt-2">Sexe*</p>
+                    <div class="form-check form-check-inline ">
+                        <input class="form-check-input" type="radio" name="sexe" value="masculin" id="masc">
+                        <label class="form-check-label" for="masc"> Masculin</label>
+                    </div>
+                    <div class="form-check form-check-inline ">
+                        <input class="form-check-input" type="radio" name="sexe" value="feminin" id="fem">
+                        <label class="form-check-label" for="fem">Féminin</label>
+                    </div>
+                    <div class="text-danger" id=ersexe></div>
+
+                    <div class="form-group  mt-2 ">
+                        <label for="date"> Date de naissance *</label>
+                        <input class="form-control" type="text" name="ddn" id="date">
+                        <div class="text-danger" id=erdate></div>
+
+                    </div>
+                    <div class="form-group ">
+                        <label for="cp">Code postal *</label>
+                        <input class="form-control" type="text" name="cp" id="cp">
+                        <div class="text-danger" id=ercp></div>
+
+                    </div>
+                    <div class="form-group ">
+                        <label for="adresse"> Adresse</label>
+                        <input class="form-control" type="text" name="adresse" id="adresse">
+                    </div>
+                    <div class="form-group ">
+                        <label for="ville"> Ville</label>
+                        <input class="form-control" type="text" name="ville" id="ville">
+                    </div>
+                    <div class="form-group ">
+                        <label for="mail">Email *</label>
+                        <input class="form-control" type="email" name="mail" id="mail" placeholder="mail@domaine.com">
+                        <div class="text-danger" id=ermail></div>
+
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="h3"> Votre demande</legend>
+                    <div class="form-group ">
+                        <label for="sujet"> Sujet *</label>
+                        <select class="form-control" id="sujet">
+                            <option value="" selected> Veuillez selectionner un sujet</option>
+                            <option value="commande"> Mes commandes</option>
+                            <option value="produit"> Question sur un produit</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autres</option>
+                        </select>
+                        <div class="text-danger" id=ersujet></div>
+
+                    </div>
+                    <div class="form-group ">
+                        <label for="question">Votre question *</label>
+                        <textarea class="form-control" name="question" rows="5" cols="30" id="question"></textarea>
+                        <div class="text-danger" id=erquestion></div>
+
+                    </div>
+                </fieldset>
+                <div class="form-check ">
+                    <input class="form-check-input" type="checkbox" name="rgpd" value="accord" id="accord">
+                    <label class="form-check-label" for="accord">* J'accepte le traitement informatique de ce
+                        formulaire.</label>
+                        <div class="text-danger" id=eraccord></div>
+
+                </div>
+                <button type="submit" class="btn btn-dark mr-2 btn-sm" id="envoie">envoyer</button>
+                <button type="reset" class="btn btn-dark btn-sm">annuler</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    </div>
+
+    <script src="src/js/javascript.js"></script>
+
+</body>
+
+</html>
