@@ -44,16 +44,9 @@ JOIN products
 ON `order details`.ProductID=products.ProductID
 JOIN suppliers
 ON products.SupplierID=suppliers.SupplierID
-WHERE customers.CustomerID IN (
-SELECT orders.CustomerID FROM orders
-WHERE orders.OrderID IN(
-SELECT `order details`.OrderID FROM `order details`
-WHERE `order details`.ProductID IN (
-SELECT products.ProductID FROM products
-WHERE products.SupplierID=(
-SELECT suppliers.SupplierID FROM suppliers
 WHERE suppliers.CompanyName='Exotic Liquids'
-))));
+ORDER BY customers.Country asc
+;
 
 -- requete7
 
