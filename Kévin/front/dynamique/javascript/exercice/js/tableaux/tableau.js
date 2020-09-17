@@ -41,18 +41,18 @@ function clickbtn2() {
     console.log(TailleTabBulle);
 
     while (TestBulle == true) {
-        var FinBoucle = 0;
+        var FinBoucle = false;
         for (y = 0; y <= TailleTabBulle; y++) {
             TestA = TabBulle[y];
             TestB = TabBulle[y + 1];
             if (TestA > TestB) {
                 TabBulle[y] = TestB;
                 TabBulle[y + 1] = TestA;
-                FinBoucle++;
+                FinBoucle=true;
             }
         }
         console.log(FinBoucle);
-        if (FinBoucle == 0) {
+        if (FinBoucle == false) {
             TestBulle = false;
         }
 
