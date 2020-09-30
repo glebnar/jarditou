@@ -19,10 +19,8 @@ $requete = "SELECT * FROM produits where pro_id=$proID";
                     $row = $result->fetch(PDO::FETCH_OBJ)
 ?>
 <!-- contenu -->
-<div class="row m-0">
-  <div class="col-sm-4"></div>
-  <img class=" col-sm-4" src="<?php echo "public/images/".$row->pro_id.".".$row->pro_photo.""; ?>" alt="">
-  <div class="col-sm-4"></div>
+<div class="row pt-3 ">
+  <img class="img_detail mx-auto" src="<?php echo "public/images/".$row->pro_id.".".$row->pro_photo.""; ?>" alt="<?php echo $row->pro_libelle ?>" width=auto>
 </div>
 <div class="row m-0">
   <div class="col-12 col-sm-12 p-0">
@@ -88,7 +86,7 @@ $requete = "SELECT * FROM produits where pro_id=$proID";
 
   <a type="button" class="btn btn-secondary" href="index.php" >Retour</a>
   <a type="button" class="btn btn-warning mx-1">Modifier</a>
-  <a type="button" class="btn btn-danger" onclick="Suppression();">Supprimer</a>
+  <a type="button" class="btn btn-danger" onclick="Suppression();" href="delete_script.php?pro_id=<?php echo $row->pro_id ?>" >Supprimer</a>
 
 </div>
 <!-- --- -->
@@ -98,14 +96,12 @@ function Suppression(){
      //Rappel : confirm() -> Bouton OK et Annuler, renvoit true (OK) ou false (Annuler)
      var resultat = confirm("Etes-vous certain de vouloir supprimer cet enregistrement ?");
 
-     //pour visualiser le booléen en retour
-     alert("Retour du booléen après avoir cliqué : "+ resultat+"\nRappel : OK vaut true et Annuler vaut false :");
 
-     //annulation du comportemnt par défaut : redirection vers la page 'script_delete.php?sta_id=X'
+     //annulation du comportemnt par défaut 
      if (resultat==false){
 
      event.preventDefault();
-
+     document.location.href="index.php"; 
      }
 }
 

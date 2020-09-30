@@ -2,3 +2,8 @@ table a {
 text-decoration-line: underline;
 color: brown;
 }
+
+.img_detail{
+   width: auto;
+    max-height: 200px;
+}
