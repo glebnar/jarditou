@@ -1,7 +1,9 @@
 <?php
 include("header.php");
 $proID = $_GET["pro_id"];
-$requete = "SELECT * FROM produits where pro_id=$proID";
+$requete = "SELECT * FROM produits
+join categories on cat_id=pro_cat_id
+where pro_id=$proID";
                     $result = $db->query($requete);
 
                     if (!$result) 
@@ -31,18 +33,8 @@ $requete = "SELECT * FROM produits where pro_id=$proID";
     <div class="form-group">
 
       <label for="categorie">catégorie</label>
-        <?php
-          if ($row->pro_cat_id==27){$cat="Barbecues"; }
-          else if ($row->pro_cat_id==13){$cat="Brouettes"; }
-          else if ($row->pro_cat_id==2){$cat="Outils"; }
-          else if ($row->pro_cat_id==11){$cat="Débroussailleuses"; }
-          else if ($row->pro_cat_id==28){$cat="Lambris"; }
-          else if ($row->pro_cat_id==25){$cat="Parasols"; }
-          else if ($row->pro_cat_id==21){$cat="Pots"; }
-          else if ($row->pro_cat_id==10){$cat="Tondeuse"; }
-          else if ($row->pro_cat_id==9){$cat="Tondeuse"; }
-          ?>
-      <input type="text" class="form-control" name="categorie" id="categorie" value="<?php echo $cat ?>" readonly>
+  
+      <input type="text" class="form-control" name="categorie" id="categorie" value="<?php echo $row->cat_nom ?>" readonly>
     </div>
     <div class="form-group">
       <label for="libelle">Libellé</label>
@@ -85,7 +77,7 @@ $requete = "SELECT * FROM produits where pro_id=$proID";
   </div>
 
   <a type="button" class="btn btn-secondary" href="index.php" >Retour</a>
-  <a type="button" class="btn btn-warning mx-1">Modifier</a>
+  <a type="button" class="btn btn-warning mx-1" href="update_form.php?pro_id=<?php echo $row->pro_id ?>">Modifier</a>
   <a type="button" class="btn btn-danger" onclick="Suppression();" href="delete_script.php?pro_id=<?php echo $row->pro_id ?>" >Supprimer</a>
 
 </div>

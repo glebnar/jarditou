@@ -29,9 +29,8 @@ require "connexion_BDD.php" ;
             <div class="collapse navbar-collapse" id="navbarnav">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="index.php">Accueil <span class="sr-only ">(page actuel)</span></a>
-                    <a class="nav-item nav-link" href="tableau.php">Tableau</a>
                     <a class="nav*item nav-link" href="contact.php">Contact</a>
-                    <a class="nav*item nav-link" href="produits_ajout.php">Ajouter un produit</a>
+                    <a class="nav*item nav-link" href="add_form.php">Ajouter un produit</a>
 
                 </div>
             </div>

@@ -5,7 +5,8 @@ $pro_id=$_GET['pro_id'];
 
 //construction de la requête DELETE sans injection SQL
 
-$requete = $db->prepare("DELETE from produits WHERE pro_id=:pro_id");
+$requete = $db->prepare("DELETE from produits
+WHERE pro_id=:pro_id");
 
 //$requete->bindValue(':sta_nom', $nom_station, PDO::PARAM_STR);
 //$requete->bindValue(':sta_altitude', $altitude_station, PDO::PARAM_INT);

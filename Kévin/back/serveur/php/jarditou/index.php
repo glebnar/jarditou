@@ -48,7 +48,7 @@ include("header.php");
         echo"<td class=\"align-middle\">".$row->pro_couleur."</td>";
         echo"<td class=\"align-middle\">".$row->pro_d_ajout."</td>";
         echo"<td class=\"align-middle text-uppercase\">".$row->pro_d_modif."</td>";
-        if ($row->pro_bloque!=null && $row->pro_bloque !=0)
+        if ($row->pro_bloque!=null)
        { echo"<td class=\"align-middle  \"><p class=\"text-uppercase text-white bg-danger m-0\">bloqué</p></td>";}
        else {
         echo"<td class=\"align-middle \"></td>";
