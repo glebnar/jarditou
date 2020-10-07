@@ -1,0 +1,13 @@
+table a {
+text-decoration-line: underline;
+color: brown;
+}
+
+#img_detail{
+   width: auto;
+    max-height: 200px;
+}
+
+#cancel,#valid,#d_cat_nom,#div_photo{
+    display: none;
+}
