@@ -1,5 +1,5 @@
 
-
+// change la page détail en formulaire de modification
 $("#mod").on('click', function () {
     $(this).text(($(this).text()=="Modifier"?"Annuler":"Modifier"));
     $(this).toggleClass("btn-danger text-light");
@@ -8,7 +8,7 @@ $("#mod").on('click', function () {
     $("#suppr").toggle();
     $("#img_detail").toggle();
     $("#categorie").toggle();
-    $("#cat_nom").toggle();
+    $("#d_cat_nom").toggle();
     $("#div_photo").toggle();
     if( $("#pro_ref").attr('readonly')== 'readonly'){
         $("#pro_ref").removeAttr('readonly');
