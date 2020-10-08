@@ -10,7 +10,9 @@ $erreur_ref=$_GET["erreur_ref"];}
         <div class="text-danger pt-2 font-weight-bold">
           <?php if(isset($erreur_ref)){
             if ($erreur_ref==1){echo "<p> Veuillez compléter tous les champs </p>";
-      unset($_GET["erreur"]);}
+              unset($_GET["erreur"]);}
+              if ($erreur_ref==7){echo "<p> La référence entrée existe déjà </p>";
+              unset($_GET["erreur"]);}
 
       
       } ?>

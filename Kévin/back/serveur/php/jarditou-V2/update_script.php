@@ -23,7 +23,7 @@ $aMimeTypes = array("image/gif", "image/jpeg", "image/png");
 if ($erreur_file==0){
 
     if ($extension!=$pro_photo){
-        header("Location: update_form.php?pro_id=$pro_id&erreur_ref=4");
+        header("Location: detail.php?pro_id=$pro_id&erreur_ref=4");
     }
 
     // On extrait le type du fichier via l'extension FILE_INFO 
@@ -32,16 +32,25 @@ if ($erreur_file==0){
     finfo_close($finfo);
 
     if (in_array($mimetype, $aMimeTypes)){
-        move_uploaded_file($_FILES["fichier"]["tmp_name"], "public/images/".$pro_id.".".$pro_photo);
+        move_uploaded_file($_FILES["fichier"]["tmp_name"], "public/Images/".$pro_id.".".$pro_photo);
     }
     else{
         // Le type n'est pas autorisé, donc ERREUR
             
-        header("Location: update_form.php?pro_id=$pro_id&erreur_ref=5");
+        header("Location: detail.php?pro_id=$pro_id&erreur_ref=5");
     }
 
 }
+// verifie si la reference produit existe déjà
+if (isset($pro_ref)){
+    $requete_ref=$db->prepare("select pro_ref from produits where pro_ref=\"$pro_ref\"");
+    $requete_ref->execute();
+    $nb_ref=$requete_ref->rowCount();
+    if ($nb_ref != 0){
+        header("Location: detail.php?pro_id=$pro_id&erreur_ref=7");
 
+    }
+}
 // ---------------------------------------------
 if ($_POST['pro_bloque']=="oui"){
     $pro_bloque=1;
@@ -52,18 +61,20 @@ else {
 
 
 // -------------------------------------------------
-if (!isset($pro_ref)||!isset($pro_libelle)||!isset($pro_description)
-||!isset($pro_prix)||!isset($pro_stock)||!isset($pro_couleur)||!isset($pro_photo)){
-    header("Location: update_form.php?pro_id=$pro_id&erreur_ref=1");
+var_dump(preg_match('/[a-zA-Z0-9]*/',$pro_ref));
+if (preg_match('/[a-zA-Z0-9]*/',$pro_ref)==0||preg_match('/[a-zA-Z0-9]*/',$pro_libelle)==0||preg_match('/[a-zA-Z0-9]*/',$pro_description)==0
+||preg_match('/[a-zA-Z0-9\.]*/',$pro_prix)==0||preg_match('/[a-zA-Z0-9]*/',$pro_stock)==0||preg_match('/[a-zA-Z0-9]*/',$pro_couleur)==0||preg_match('/[a-zA-Z0-9]*/',$pro_photo)==0){
+    header("Location: detail.php?pro_id=$pro_id&erreur_ref=1");
+    echo "test";
 }
 
 else if (!is_numeric($pro_prix) || !is_numeric($pro_stock)){
-    header("Location: update_form.php?pro_id=$pro_id&erreur_ref=2");
+    header("Location: detail.php?pro_id=$pro_id&erreur_ref=2");
 
 }
 
 else if (!preg_match('/(jpg|png|gif)/',$pro_photo)){
-    header("Location: update_form.php?pro_id=$pro_id&erreur_ref=3");
+    header("Location: detail.php?pro_id=$pro_id&erreur_ref=3");
 }
 //construction de la requête UPDATE sans injection SQL
 else {

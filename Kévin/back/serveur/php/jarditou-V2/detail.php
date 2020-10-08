@@ -1,6 +1,8 @@
 <?php
 include("header.php");
-
+if(isset($_GET["erreur_ref"])){
+  $erreur_ref=$_GET["erreur_ref"];}
+  
 $proID = $_GET["pro_id"];
 $requete = "SELECT * FROM produits
 join categories on cat_id=pro_cat_id
@@ -24,7 +26,7 @@ where pro_id=$proID";
 
 <!-- contenu -->
 <div class="row pt-3 ">
-  <img class=" mx-auto" id="img_detail" src="<?php echo "public/images/".$row->pro_id.".".$row->pro_photo.""; ?>" alt="<?php echo $row->pro_libelle ?>">
+  <img class=" mx-auto" id="img_detail" src="<?php echo "public/Images/".$row->pro_id.".".$row->pro_photo.""; ?>" alt="<?php echo $row->pro_libelle ?>">
 </div>
 <div class="row m-0">
   <div class="col-12 col-sm-12 p-0">
@@ -33,8 +35,9 @@ where pro_id=$proID";
           <?php if(isset($erreur_ref)){
             if ($erreur_ref==1){echo "<p> Veuillez compléter tous les champs </p>";
       unset($_GET["erreur"]);}
+      if ($erreur_ref==7){echo "<p> La référence entrée existe déjà </p>";
+        unset($_GET["erreur"]);}
 
-      
       } ?>
       </div>
         <div class="form-group">

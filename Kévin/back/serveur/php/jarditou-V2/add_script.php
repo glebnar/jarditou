@@ -1,22 +1,6 @@
 <?php 
 require "connexion_BDD.php" ;
 
-$requete = "SELECT pro_id FROM produits order by pro_id desc";
-$result = $db->query($requete);
-if (!$result) 
-    {
-        $tableauErreurs = $db->errorInfo();
-        echo $tableauErreur[2]; 
-        die("Erreur dans la requête");
-    }
-if ($result->rowCount() == 0) 
-    {
-    // Pas d'enregistrement
-    die("La table est vide");
-    }
-    $row = $result->fetch(PDO::FETCH_OBJ);
-    $nom_fichier=$row->pro_id+1;
-
 //récupération des informations passées en POST, nécessaires à la modification
 $pro_ref=$_POST['pro_ref'];
 $cat_nom=$_POST['cat_nom'];
@@ -30,6 +14,15 @@ $pro_d_ajout=date("y-m-d");
 $extension = substr(strrchr($_FILES["fichier"]["name"], "."), 1);
 $erreur_file=$_FILES["fichier"]["error"];
 
+// ---------------------------------------------
+if ($_POST['pro_bloque']=="oui"){
+    $pro_bloque=1;
+}
+else {
+    $pro_bloque=null;
+    }
+
+
 // ----------------------------------------------------------
 $aMimeTypes = array("image/gif", "image/jpeg", "image/png");
 
@@ -37,7 +30,7 @@ if ($erreur_file==0){
 
     if ($extension!=$pro_photo){
         header("Location: add_form.php?erreur_ref=4");
-    }
+    }    
 
     // On extrait le type du fichier via l'extension FILE_INFO 
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -49,20 +42,26 @@ if ($erreur_file==0){
         // Le type n'est pas autorisé, donc ERREUR
             
         header("Location: add_form.php?erreur_ref=5");
-    }
+    }    
 
-}
-
-// ---------------------------------------------
-if ($_POST['pro_bloque']=="oui"){
-    $pro_bloque=1;
-}
-else {
-    $pro_bloque=null;
-    }
-
+}    
 
 // -------------------------------------------------
+// verifie si la reference produit existe déjà
+
+if (isset($pro_ref)){
+    $requete_ref=$db->prepare("select pro_ref from produits where pro_ref=\"$pro_ref\"");
+    $requete_ref->execute();
+    $nb_ref=$requete_ref->rowCount();
+    if ($nb_ref != 0){
+        header("Location: add_form.php?erreur_ref=7");
+
+    }
+    $requete_ref->closeCursor();
+
+}
+
+// ----------------------------
 if (!isset($pro_ref)||!isset($pro_libelle)||!isset($pro_description)
 ||!isset($pro_prix)||!isset($pro_stock)||!isset($pro_couleur)||!isset($pro_photo)){
     header("Location: add_form.php?erreur_ref=1");
@@ -93,7 +92,6 @@ else {
     $requete->bindValue(':pro_cat_id', $cat_nom);
         $requete->bindValue(':pro_d_ajout',$pro_d_ajout);
     $requete->execute();
-    // libère la connection au serveur de BDD
     if (in_array($mimetype, $aMimeTypes)){
         // $lastid = $db->exec('
         // SELECT LAST_INSERT_ID() FROM produits
@@ -108,15 +106,15 @@ else {
         }
         if ($result2->rowCount() == 0) 
         {
-           // Pas d'enregistrement
-           die("La table est vide");
+            // Pas d'enregistrement
+            die("La table est vide");
         }    
         $row = $result2->fetch(PDO::FETCH_OBJ);
-    
+        
         move_uploaded_file($_FILES["fichier"]["tmp_name"], "public/images/".$row->pro_id.".".$pro_photo);
     }
-    // redirection vers la page index.php 
     $requete->closeCursor();
+    // redirection vers la page index.php 
     header("Location: index.php");
         }
         else {
